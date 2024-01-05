@@ -2,6 +2,31 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
 
+## Initial Setup
+
+Install the angular CLI with:
+npm install -g @angular/cli
+
+Install the packages
+npm install
+
+## Text editor's extensions
+
+Angular Language Service.
+Angular Support.
+Eslint.
+Prettier.
+Tailwind CSS IntelliSense.
+TypesScript Importer.
+
+## Optional Text editor's extensions
+
+Better Comments.
+Code Spell Checker.
+Paste JSON as Code.
+Pretty TypeScript Errors.
+Svg Preview.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

@@ -4,32 +4,34 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Initial Setup
 
-```
 Install the angular CLI with:
+
+```
 npm install -g @angular/cli
 ```
 
-```
 Install the packages:
+
+```
 npm install
 ```
 
 ## Text editor's extensions
 
-* Angular Language Service.
-* Angular Support.
-* Eslint.
-* Prettier.
-* Tailwind CSS IntelliSense.
-* TypesScript Importer.
+- Angular Language Service.
+- Angular Support.
+- Eslint.
+- Prettier.
+- Tailwind CSS IntelliSense.
+- TypesScript Importer.
 
 ## Optional Text editor's extensions
 
-* Better Comments.
-* Code Spell Checker.
-* Paste JSON as Code.
-* Pretty TypeScript Errors.
-* Svg Preview.
+- Better Comments.
+- Code Spell Checker.
+- Paste JSON as Code.
+- Pretty TypeScript Errors.
+- Svg Preview.
 
 ## Development server
 

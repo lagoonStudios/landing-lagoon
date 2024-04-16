@@ -3,7 +3,7 @@ import Typography from '@atoms/Typography.astro'
 import TestimonialsList from '../organisms/TestimonialsList.astro'
 ---
 
-<article class="flex flex-col gap-4">
+<article class="flex flex-col items-center justify-center gap-4">
   <TestimonialsList />
 
   <section>
@@ -14,4 +14,8 @@ import TestimonialsList from '../organisms/TestimonialsList.astro'
       Work with professionals in the field of technology product design to achieve your ideal results.
     </Typography>
   </section>
+
+  <button class="w-full max-w-72 rounded-lg bg-purple py-1">
+    <Typography as="label" variant="bodyExtraLight" color="white"> Contact Us </Typography>
+  </button>
 </article>

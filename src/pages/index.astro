@@ -1,22 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/templates/Hero.astro'
+import Testimonials from '../components/templates/Testimonials.astro'
 ---
 
 <Layout title="Lagoon Studios" description="">
-  <main>
+  <main class="m-auto w-[800px] max-w-[calc(100%-2rem)] p-4 flex flex-col gap-5">
     <Hero />
+    <Testimonials />
   </main>
 </Layout>
-
-<style>
-  main {
-    @apply mt-20;
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    font-size: 20px;
-    line-height: 1.6;
-  }
-</style>

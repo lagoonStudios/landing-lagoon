@@ -31,13 +31,6 @@ module.exports = {
     },
     overrides: [
       {
-        files: ['*.astro'],
-        parser: 'astro-eslint-parser',
-        parserOptions: {
-          extraFileExtensions: ['.astro'],
-        },
-      },
-      {
         // Define the configuration for `<script>` tag.
         // Script in `<script>` is assigned a virtual file name with the `.js` extension.
         files: ['**/*.astro/*.js', '*.astro/*.js'],

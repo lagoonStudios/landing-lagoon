@@ -1,0 +1,28 @@
+---
+import Typography from '../atoms/Typography.astro'
+import BackgroundCard from '../molecules/BackgroundCard.astro'
+---
+
+<article class="flex flex-col items-center gap-7">
+  <Typography as="h1" variant="title" color="purple"> Immerse yourself in the world of technology. </Typography>
+
+  <BackgroundCard>
+    <Typography as="p" variant="body" color="white" class="font-extralight">
+      <Typography as="label" variant="body" color="white" class="font-semibold">
+        Our goal is to help companies create and launch successful products.
+      </Typography>
+      Our team of professionals with a deep knowledge of the industry is ready to help you.
+    </Typography>
+  </BackgroundCard>
+
+  <button class="w-full max-w-72 rounded-lg bg-purple py-1">
+    <Typography as="label" variant="bodyExtraLight" color="white"> Get started </Typography>
+  </button>
+
+  <Typography as="p" variant="medium" color="black" class="font-semibold">
+    Improve your projects with a team of skilled product development professionals.
+    <Typography as="label" variant="mediumExtraLight" color="black" class="font-extralight">
+      Our success stories reflect our commitment to the projects we undertake.
+    </Typography>
+  </Typography>
+</article>

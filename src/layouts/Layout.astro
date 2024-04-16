@@ -1,10 +1,14 @@
 ---
+import '@fontsource/poppins/200.css' // extraThin
+import '@fontsource/poppins/400.css' // regular
+import '@fontsource/poppins/600.css' //semibold
+
 interface Props {
-  title: string;
-  description: string;
+  title: string
+  description: string
 }
 
-const { title, description } = Astro.props;
+const { title, description } = Astro.props
 ---
 
 <!doctype html>
@@ -22,10 +26,13 @@ const { title, description } = Astro.props;
   </body>
 </html>
 <style is:global>
-    :root {
-  		color-scheme: light;
-	}
+  :root {
+    color-scheme: light;
+  }
   html {
-    font-family: system-ui, sans-serif;
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+  body {
+    background-color: #ebf0f8;
   }
 </style>

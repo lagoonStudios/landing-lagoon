@@ -1,5 +1,7 @@
 ---
-import '@fontsource/poppins'
+import '@fontsource/poppins/200.css' // extraThin
+import '@fontsource/poppins/400.css' // regular
+import '@fontsource/poppins/600.css' //semibold
 
 interface Props {
   title: string
@@ -29,5 +31,8 @@ const { title, description } = Astro.props
   }
   html {
     font-family: 'Poppins', system-ui, sans-serif;
+  }
+  body {
+    background-color: #ebf0f8;
   }
 </style>

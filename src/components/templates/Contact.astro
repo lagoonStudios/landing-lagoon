@@ -1,0 +1,31 @@
+---
+import Input from '@atoms/Input.astro'
+import TextArea from '@atoms/TextArea.astro'
+import Typography from '@atoms/Typography.astro'
+import LagoonLogo from '@icons/lagoon-logo.astro'
+---
+
+<article class="flex flex-col items-center justify-center gap-10 bg-purple p-10">
+  <Typography as="h2" variant="title" color="white">Get in Touch</Typography>
+
+  <form id="contact-form" class="flex w-full flex-col gap-4">
+    <Input label="Name" />
+    <Input label="Email" />
+
+    <TextArea label="Message" />
+
+    <button
+      type="submit"
+      class="mt-2 rounded-full border border-white bg-purple py-1 text-base text-white hover:scale-110"
+    >
+      Send it
+    </button>
+  </form>
+
+  <LagoonLogo class="text-white" />
+</article>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('#contact-form')
+  form?.addEventListener('submit', (e) => e.preventDefault())
+</script>

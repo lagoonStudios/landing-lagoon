@@ -1,0 +1,14 @@
+---
+import Typography from './Typography.astro'
+
+interface Props {
+  label: string
+}
+
+const { label } = Astro.props
+---
+
+<Typography as="label" variant="medium" color="white" class="flex w-full flex-col gap-1 font-extralight">
+  {label}
+  <textarea class="w-full rounded-[35px]" rows="6" />
+</Typography>

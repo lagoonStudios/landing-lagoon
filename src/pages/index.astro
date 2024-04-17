@@ -2,11 +2,15 @@
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/templates/Hero.astro'
 import Testimonials from '../components/templates/Testimonials.astro'
+import Services from '@templates/Services.astro'
+import Projets from '@templates/Projets.astro'
 ---
 
 <Layout title="Lagoon Studios" description="">
-  <main class="m-auto w-[800px] max-w-[calc(100%-2rem)] p-4 flex flex-col gap-5">
+  <main class="m-auto flex w-[800px] max-w-[calc(100%-2rem)] flex-col gap-5 p-4">
     <Hero />
     <Testimonials />
+    <Services />
+    <Projets />
   </main>
 </Layout>

@@ -1,0 +1,62 @@
+---
+
+---
+
+<!-- Slider main container -->
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide">Slide 1</div>
+    <div class="swiper-slide">Slide 2</div>
+    <div class="swiper-slide">Slide 3</div>
+    <div class="swiper-slide">Slide 4</div>
+    <div class="swiper-slide">Slide 5</div>
+    <div class="swiper-slide">Slide 6</div>
+    <div class="swiper-slide">Slide 7</div>
+    <div class="swiper-slide">Slide 8</div>
+    <div class="swiper-slide">Slide 9</div>
+    <div class="swiper-slide">Slide 10</div>
+  </div>
+</div>
+
+<style>
+  .swiper {
+    width: 100%;
+    max-width: 600px;
+
+    height: 300px;
+  }
+
+  .swiper-slide {
+    color: white;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+  }
+</style>
+
+<script>
+  import Swiper from 'swiper'
+  import 'swiper/css'
+
+  new Swiper('.swiper', {
+    loop: true,
+    slidesPerView: 'auto',
+  })
+
+  function handleColorGradient() {
+    let opacity = 1
+    const opacityDecrement = 0.1
+    const elements = document.querySelectorAll<HTMLDivElement>('.swiper-slide')
+
+    for (const element of elements) {
+      element.style.backgroundColor = `rgba(23, 96, 236, ${opacity})`
+      opacity -= opacityDecrement
+    }
+  }
+
+  handleColorGradient()
+</script>

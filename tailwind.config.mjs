@@ -10,6 +10,9 @@ export default {
         'almost-white': '#EBF0F8',
         'light-grey': '#BCBCBC',
       },
+      boxShadow: {
+        'serviceCard': '0 8px 10px 0 rgba(0, 0, 0, 0.25)',
+      },
     },
   },
   plugins: [],

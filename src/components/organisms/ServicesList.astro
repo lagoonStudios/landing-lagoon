@@ -1,0 +1,9 @@
+---
+import ServiceCard from "@molecules/ServiceCard.astro"
+
+    const SERVICES = [1,2,3,4,]
+---
+
+<ul class="flex flex-col gap-10">
+    {SERVICES.map((service) => <ServiceCard/>)}
+</ul>

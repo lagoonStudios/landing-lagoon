@@ -1,0 +1,14 @@
+---
+import Typography from '@atoms/Typography.astro'
+import ServicesList from '@organisms/ServicesList.astro'
+---
+
+<article class="flex flex-col gap-10">
+  <Typography as="h2" color="black" variant="title" class="text-3xl"> Our services</Typography>
+
+  <ServicesList />
+
+  <Typography as="p" variant="medium" color="black">
+    A journey of a thousand miles, begins with the first step
+  </Typography>
+</article>

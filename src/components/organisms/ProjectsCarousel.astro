@@ -3,13 +3,46 @@
 ---
 
 <!-- Slider main container -->
-<div class="swiper">
+<div class="swiper" id="swiper">
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
     <!-- Slides -->
-    <div class="swiper-slide">Slide 1</div>
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
+    <div class="swiper-slide">
+      <h4>Project 1</h4>
+      <div class="hidden bg-white">
+        <h5 class="font-semibold text-black">Lorem ipsum</h5>
+        <p class="font-extralight text-black">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet dui id orci commodo lacinia.
+        </p>
+        <p class="text-purple">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet dui id orci commodo lacinia.
+        </p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <h4>Project 2</h4>
+      <div class="hidden bg-white">
+        <h5 class="font-semibold text-black">Lorem ipsum</h5>
+        <p class="font-extralight text-black">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet dui id orci commodo lacinia.
+        </p>
+        <p class="text-purple">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet dui id orci commodo lacinia.
+        </p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <h4>Project 3</h4>
+      <div class="hidden bg-white">
+        <h5 class="font-semibold text-black">Lorem ipsum</h5>
+        <p class="font-extralight text-black">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet dui id orci commodo lacinia.
+        </p>
+        <p class="text-purple">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet dui id orci commodo lacinia.
+        </p>
+      </div>
+    </div>
     <div class="swiper-slide">Slide 4</div>
     <div class="swiper-slide">Slide 5</div>
     <div class="swiper-slide">Slide 6</div>
@@ -36,6 +69,24 @@
     align-items: center;
     padding: 8px;
   }
+
+  .selected-slide {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .selected-slide div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+    padding: 8px;
+    margin: 0 4px;
+    border-radius: 10px;
+  }
 </style>
 
 <script>
@@ -45,6 +96,30 @@
   new Swiper('.swiper', {
     loop: true,
     slidesPerView: 'auto',
+    initialSlide: 0,
+    updateOnWindowResize: true,
+    grabCursor: true,
+    centeredSlides: true,
+    centeredSlidesBounds: true,
+    on: {
+      click: (swiper, event) => {
+        const slide = event.target as HTMLElement
+
+        if (slide) {
+          if (slide.classList.contains('selected-slide')) {
+            slide.classList.remove('selected-slide')
+          } else {
+            document.querySelector('.selected-slide')?.classList.remove('selected-slide')
+            slide.classList.add('selected-slide')
+          }
+
+          swiper.update()
+
+          const index = parseInt(slide.dataset.swiperSlideIndex || '0')
+          if (index) swiper.slideToLoop(index)
+        }
+      },
+    },
   })
 
   function handleColorGradient() {
@@ -59,4 +134,9 @@
   }
 
   handleColorGradient()
+
+  document.querySelector('#swiper')?.addEventListener('blur', () => {
+    console.log('blur')
+    document.querySelector('.selected-slide')?.classList.remove('selected-slide')
+  })
 </script>

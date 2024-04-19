@@ -5,11 +5,13 @@ import Testimonials from '../components/templates/Testimonials.astro'
 import Services from '@templates/Services.astro'
 import Projets from '@templates/Projets.astro'
 import Contact from '@templates/Contact.astro'
+import Header from '@templates/Header.astro'
 ---
 
 <Layout title="Lagoon Studios" description="">
   <main>
-    <div class="m-auto flex w-[800px] max-w-[calc(100%-2rem)] flex-col gap-5 p-4">
+    <Header />
+    <div class="m-auto mt-5 flex w-[800px] max-w-[calc(100%-2rem)] flex-col gap-5">
       <Hero />
       <Testimonials />
       <Services />

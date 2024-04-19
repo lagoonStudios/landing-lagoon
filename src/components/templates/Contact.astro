@@ -5,7 +5,9 @@ import Typography from '@atoms/Typography.astro'
 import LagoonLogo from '@icons/lagoon-logo.astro'
 ---
 
-<article class="flex flex-col items-center justify-center gap-10 bg-purple p-10">
+<footer
+  class="m-auto flex w-[800px] max-w-[calc(100%-2rem)] flex-col items-center justify-center gap-10 bg-purple p-10"
+>
   <Typography as="h2" variant="title" color="white">Get in Touch</Typography>
 
   <form id="contact-form" class="flex w-full flex-col gap-4">
@@ -14,16 +16,13 @@ import LagoonLogo from '@icons/lagoon-logo.astro'
 
     <TextArea label="Message" />
 
-    <button
-      type="submit"
-      class="mt-2 rounded-full border border-white bg-purple py-1 text-base text-white"
-    >
+    <button type="submit" class="mt-2 rounded-full border border-white bg-purple py-1 text-base text-white">
       Send it
     </button>
   </form>
 
   <LagoonLogo class="text-white" />
-</article>
+</footer>
 
 <script>
   const form = document.querySelector<HTMLFormElement>('#contact-form')

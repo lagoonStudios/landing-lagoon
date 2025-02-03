@@ -1,28 +1,48 @@
 ---
+import { Image } from 'astro:assets'
 import Typography from '../atoms/Typography.astro'
 import BackgroundCard from '../molecules/BackgroundCard.astro'
+import ExecutiveGroupImg from '@images/executive-group.webp'
 ---
 
-<article class="flex flex-col items-center gap-7 px-8">
-  <Typography as="h1" variant="title" color="purple" class="w-full text-start"> Immerse yourself in the world of technology. </Typography>
-  <div class="px-10">
-    <BackgroundCard>
-      <Typography as="p" variant="body" color="white" class="font-extralight">
-        <Typography as="label" variant="body" color="white" class="font-semibold">
-          Our goal is to help companies create and launch successful products.
+<article class="flex flex-col items-center gap-7 md:bg-purple">
+  <div class="m-auto mt-5 flex w-[800px] max-w-[calc(100%-2rem)] flex-col gap-5 md:mb-40">
+    <Typography as="h1" variant="title" color="purple" class="md-text-white w-full text-start md:text-white">
+      Immerse yourself in the world of technology.
+    </Typography>
+    <div class="relative px-10 md:flex md:items-start md:justify-center md:gap-5 md:pr-[60%]">
+      <BackgroundCard>
+        <Typography as="p" variant="body" color="white" class="font-extralight" class="md:pb-10">
+          <Typography as="label" variant="body" color="white" class="font-semibold">
+            Our goal is to help companies create and launch successful products.
+          </Typography>
+          Our team of professionals with a deep knowledge of the industry is ready to help you.
         </Typography>
-        Our team of professionals with a deep knowledge of the industry is ready to help you.
+      </BackgroundCard>
+      <Image
+        src={ExecutiveGroupImg}
+        alt="Executive group"
+        class="absolute right-[100px] hidden h-[500px] w-auto md:block"
+      />
+    </div>
+    <div class="flex items-center justify-center md:hidden">
+      <button class="w-full max-w-72 rounded-lg bg-purple">
+        <Typography as="label" variant="bodyExtraLight" color="white"> Get started </Typography>
+      </button>
+    </div>
+    <Typography as="p" variant="medium" color="black" class="font-semibold md:hidden">
+      Improve your projects with a team of skilled product development professionals.
+      <Typography as="label" variant="mediumExtraLight" color="black" class="font-extralight">
+        Our success stories reflect our commitment to the projects we undertake.
       </Typography>
-    </BackgroundCard>
+    </Typography>
   </div>
-  <button class="w-full max-w-72 rounded-lg bg-purple py-1">
-    <Typography as="label" variant="bodyExtraLight" color="white"> Get started </Typography>
-  </button>
-
-  <Typography as="p" variant="medium" color="black" class="font-semibold">
+</article>
+<div class="m-auto mt-5 flex w-[800px] max-w-[calc(100%-2rem)] flex-col gap-5 md:mt-14">
+  <Typography as="p" variant="medium" color="black" class="hidden font-semibold md:block">
     Improve your projects with a team of skilled product development professionals.
     <Typography as="label" variant="mediumExtraLight" color="black" class="font-extralight">
       Our success stories reflect our commitment to the projects we undertake.
     </Typography>
   </Typography>
-</article>
+</div>

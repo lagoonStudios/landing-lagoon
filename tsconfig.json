@@ -9,7 +9,8 @@
       "@organisms/*": ["src/components/organisms/*"],
       "@templates/*": ["src/components/templates/*"],
       "@icons/*": ["src/assets/icons/*"],
-      "@images/*": ["src/assets/images/*"]
+      "@images/*": ["src/assets/images/*"],
+      "@types/*": ["src/types/*"]
     },
     "verbatimModuleSyntax": true
   }

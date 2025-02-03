@@ -13,14 +13,14 @@ const { logo, testimonyTitle, testimony, companyName, name, rate, date } = Astro
     <div class="flex flex-col items-end">
       {
         rate && (
-          <Typography as="label" variant="small" color="black">
+          <Typography as="label" variant="small" color="black" class="font-light">
             {rate}
           </Typography>
         )
       }
       {
         date && (
-          <Typography as="label" variant="small" color="black">
+          <Typography as="label" variant="small" color="black" class="font-light">
             {date}
           </Typography>
         )
@@ -36,7 +36,7 @@ const { logo, testimonyTitle, testimony, companyName, name, rate, date } = Astro
 
     {
       (companyName || name) && (
-        <div class="flex flex-col items-end">
+        <div class="flex flex-col items-start">
           {companyName && (
             <Typography as="label" variant="medium" color="black">
               {companyName}

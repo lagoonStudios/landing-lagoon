@@ -3,12 +3,16 @@ import Typography from '@atoms/Typography.astro'
 import ServicesList from '@organisms/ServicesList.astro'
 ---
 
-<article class="flex flex-col gap-10">
-  <Typography as="h2" color="black" variant="title" class="text-3xl"> Our services</Typography>
+<article class="m-auto mt-5 flex w-[800px] max-w-[calc(100%-2rem)] flex-col gap-5">
+  <div class="m-auto mt-5 flex w-[800px] max-w-[calc(100%-2rem)] flex-col gap-5">
+    <div class="flex flex-col gap-10 px-8 py-4">
+      <Typography as="h2" color="black" variant="title" class="text-3xl"> Our services</Typography>
 
-  <ServicesList />
+      <ServicesList />
 
-  <Typography as="p" variant="medium" color="black">
-    A journey of a thousand miles, begins with the first step
-  </Typography>
+      <Typography as="p" variant="medium" color="black">
+        A journey of a thousand miles, begins with the first step
+      </Typography>
+    </div>
+  </div>
 </article>

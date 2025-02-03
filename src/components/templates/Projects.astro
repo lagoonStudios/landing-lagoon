@@ -1,0 +1,17 @@
+---
+import Typography from '@atoms/Typography.astro'
+import ProjectsCarousel from '@organisms/ProjectsCarousel.astro'
+---
+
+<article class="m-auto mt-5 flex w-[800px] max-w-[calc(100%-2rem)] flex-col gap-5">
+  <div class="flex flex-col gap-5 px-8 py-4">
+    <Typography as="h2" color="black" variant="title"> Projects </Typography>
+
+    <ProjectsCarousel />
+
+    <Typography as="p" variant="medium" color="black">
+      If you would like to learn more about our team and products, please let us know by completing and submitting the
+      form below.
+    </Typography>
+  </div>
+</article>

@@ -1,0 +1,32 @@
+---
+import Typography from '@atoms/Typography.astro'
+import QuoteIcon from '@icons/quote.astro'
+import type { Testimony } from '@types/types.ts'
+type TestimonyQuote = Pick<Testimony, 'testimony' | 'date' | 'rate' | 'name'> & { class?: string; index?: number }
+interface Props extends TestimonyQuote {}
+
+const { testimony, date, rate, name, class: className, index } = Astro.props
+---
+
+{
+  index != 0 && (
+    <li class:list={[className]}>
+      <div class="translate-x-[-25px] translate-y-[-10px]">
+        <QuoteIcon class="h-[30px] w-auto" />
+      </div>
+      <Typography as="label" variant="medium" color="black" class="line-clamp-5 font-semibold">
+        {testimony}
+      </Typography>
+      <Typography as="label" variant="medium" color="gray">
+        {name}
+      </Typography>
+      <br />
+      <Typography as="label" variant="medium" color="red">
+        {rate} Lorem Ipsum,
+        <Typography as="label" variant="medium" color="gray">
+          {date}
+        </Typography>
+      </Typography>
+    </li>
+  )
+}

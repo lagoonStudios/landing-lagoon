@@ -1,5 +1,7 @@
 ---
 import TestimonialCard from '@molecules/TestimonialCard.astro'
+import TestimonialHighlight from '@molecules/TestimonialHighlight.astro'
+import TestimonialQuote from '@molecules/TestimonialQuote.astro'
 import type { Testimony } from 'src/types/types'
 
 const TESTIMONIALS: Testimony[] = [
@@ -13,21 +15,62 @@ const TESTIMONIALS: Testimony[] = [
     rate: 5,
     date: 'June 2023',
   },
+  {
+    logo: 'VERITI LOGO',
+    testimonyTitle: 'A great team that I recommend to reach the goals in the estimated time.',
+    testimony:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet dui id orci commodo lacinia. Aliquam erat volutpat. Nulla in turpis dolor. Integer congue elit nec ipsum fringilla, sed ornare diam euismod.',
+    companyName: 'Veriti  app Team',
+    name: 'Martin Chapman',
+    rate: 5,
+    date: 'June 2023',
+  },
+  {
+    logo: 'VERITI LOGO',
+    testimonyTitle: 'A great team that I recommend to reach the goals in the estimated time.',
+    testimony:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet dui id orci commodo lacinia. Aliquam erat volutpat. Nulla in turpis dolor. Integer congue elit nec ipsum fringilla, sed ornare diam euismod.',
+    companyName: 'Veriti  app Team',
+    name: 'Martin Chapman',
+    rate: 5,
+    date: 'June 2023',
+  },
 ]
 ---
 
-<ul class="p-3 flex justify-center items-center">
-  {
-    TESTIMONIALS.map(({ logo, testimonyTitle, testimony, companyName, name, rate, date }) => (
-      <TestimonialCard
-        logo={logo}
-        testimonyTitle={testimonyTitle}
-        testimony={testimony}
-        companyName={companyName}
-        name={name}
-        rate={rate}
-        date={date}
-      />
-    ))
-  }
-</ul>
+<div class="flex flex-col gap-10">
+  <TestimonialHighlight
+    class="hidden md:block"
+    testimony={TESTIMONIALS[0].testimony}
+    date={TESTIMONIALS[0].date}
+    rate={TESTIMONIALS[0].rate}
+    name={TESTIMONIALS[0].name}
+    testimonyTitle={TESTIMONIALS[0].testimonyTitle}
+  />
+  <ul class="flex items-center justify-center gap-10 p-3">
+    {
+      TESTIMONIALS.map(({ logo, testimonyTitle, testimony, companyName, name, rate, date }, index) => (
+        <>
+          <TestimonialCard
+            logo={logo}
+            testimonyTitle={testimonyTitle}
+            testimony={testimony}
+            companyName={companyName}
+            name={name}
+            rate={rate}
+            date={date}
+            class=" md:hidden"
+          />
+          <TestimonialQuote
+            testimony={testimony}
+            date={date}
+            rate={rate}
+            name={name}
+            class="hidden md:block"
+            index={index}
+          />
+        </>
+      ))
+    }
+  </ul>
+</div>

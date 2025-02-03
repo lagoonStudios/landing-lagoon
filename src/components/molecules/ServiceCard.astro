@@ -2,18 +2,21 @@
 import Typography from '@atoms/Typography.astro'
 import DeviceMobile from '@icons/device-mobile.astro'
 import WebWindow from '@icons/web-window.astro'
+import { Image } from 'astro:assets'
+
+const { icon, iconAlt, firstLabel, secondLabel } = Astro.props
 ---
 
 <li class="rounded-t-[20px] shadow-serviceCard">
-  <div class="rounded-t-[20px] bg-white p-5">icon</div>
+  <div class="flex items-center justify-center rounded-t-[20px] bg-white p-5"><Image src={icon} alt={iconAlt} /></div>
   <div class="flex flex-col gap-3 bg-green px-5 py-3">
     <div class="flex items-center justify-start gap-4">
       <DeviceMobile class="size-8" />
-      <Typography as="label" variant="medium" color="black" class="block"> Mobile Development </Typography>
+      <Typography as="label" variant="medium" color="black" class="block"> {firstLabel}</Typography>
     </div>
     <div class="flex items-center justify-start gap-4">
       <WebWindow class="size-8" />
-      <Typography as="label" variant="medium" color="black" class="block"> Web Development </Typography>
+      <Typography as="label" variant="medium" color="black" class="block"> {secondLabel} </Typography>
     </div>
   </div>
 </li>

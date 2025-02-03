@@ -1,9 +1,35 @@
 ---
-import ServiceCard from "@molecules/ServiceCard.astro"
+import ServiceCard from '@molecules/ServiceCard.astro'
+import deviceMountainImg from '@images/device-mountain.webp'
+import rocketImg from '@images/rocket.webp'
+import settingsWebImg from '@images/settings-web.webp'
 
-    const SERVICES = [1,2,3,4,]
+const SERVICES = [
+  {
+    icon: deviceMountainImg,
+    iconAlt: 'Device',
+    firstLabel: 'Mobile Development',
+    secondLabel: 'Web Development',
+  },
+  {
+    icon: settingsWebImg,
+    iconAlt: 'Settings',
+    firstLabel: 'Process optimization',
+    secondLabel: 'Project management',
+  },
+  {
+    icon: rocketImg,
+    iconAlt: 'Rocket',
+    firstLabel: 'Product design',
+    secondLabel: 'UX/UI design',
+  },
+]
 ---
 
-<ul class="flex flex-col gap-10">
-    {SERVICES.map((service) => <ServiceCard/>)}
+<ul class="flex flex-col gap-10 md:flex-row">
+  {
+    SERVICES.map(({ icon, iconAlt, firstLabel, secondLabel }) => (
+      <ServiceCard icon={icon} iconAlt={iconAlt} firstLabel={firstLabel} secondLabel={secondLabel} />
+    ))
+  }
 </ul>

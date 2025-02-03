@@ -1,7 +1,7 @@
 ---
 import Typography from '@atoms/Typography.astro'
 import QuoteIcon from '@icons/quote.astro'
-import type { Testimony } from '@types/types.ts'
+import type { Testimony } from '../../types/types.ts'
 type TestimonyQuote = Pick<Testimony, 'testimony' | 'date' | 'rate' | 'name'> & { class?: string; index?: number }
 interface Props extends TestimonyQuote {}
 

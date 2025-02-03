@@ -1,5 +1,5 @@
 ---
-import type { Testimony } from '@types/types.ts'
+import type { Testimony } from '../../types/types.ts'
 import TestimonialCard from './TestimonialCard.astro'
 interface Props extends Testimony {}
 const { logo, testimonyTitle, testimony, companyName, name, rate, date, class: className } = Astro.props

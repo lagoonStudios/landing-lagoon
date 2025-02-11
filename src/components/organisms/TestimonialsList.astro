@@ -6,7 +6,6 @@ import type { Testimony } from 'src/types/types'
 
 const TESTIMONIALS: Testimony[] = [
   {
-    logo: 'VERITI LOGO',
     testimonyTitle: 'A great team that I recommend to reach the goals in the estimated time.',
     testimony:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet dui id orci commodo lacinia. Aliquam erat volutpat. Nulla in turpis dolor. Integer congue elit nec ipsum fringilla, sed ornare diam euismod.',
@@ -14,9 +13,9 @@ const TESTIMONIALS: Testimony[] = [
     name: 'Martin Chapman',
     rate: 5,
     date: 'June 2023',
+    logo: '/images/veriti-logo.svg',
   },
   {
-    logo: 'VERITI LOGO',
     testimonyTitle: 'A great team that I recommend to reach the goals in the estimated time.',
     testimony:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet dui id orci commodo lacinia. Aliquam erat volutpat. Nulla in turpis dolor. Integer congue elit nec ipsum fringilla, sed ornare diam euismod.',
@@ -24,9 +23,9 @@ const TESTIMONIALS: Testimony[] = [
     name: 'Martin Chapman',
     rate: 5,
     date: 'June 2023',
+    logo: '/images/veriti-logo.svg',
   },
   {
-    logo: 'VERITI LOGO',
     testimonyTitle: 'A great team that I recommend to reach the goals in the estimated time.',
     testimony:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet dui id orci commodo lacinia. Aliquam erat volutpat. Nulla in turpis dolor. Integer congue elit nec ipsum fringilla, sed ornare diam euismod.',
@@ -34,6 +33,7 @@ const TESTIMONIALS: Testimony[] = [
     name: 'Martin Chapman',
     rate: 5,
     date: 'June 2023',
+    logo: '/images/veriti-logo.svg',
   },
 ]
 ---
@@ -47,7 +47,7 @@ const TESTIMONIALS: Testimony[] = [
     name={TESTIMONIALS[0].name}
     testimonyTitle={TESTIMONIALS[0].testimonyTitle}
   />
-  <ul class="flex items-center justify-center gap-10 p-3">
+  <ul class="grid items-center justify-center gap-10 p-3">
     {
       TESTIMONIALS.map(({ logo, testimonyTitle, testimony, companyName, name, rate, date }, index) => (
         <>

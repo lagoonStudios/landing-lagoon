@@ -1,31 +1,52 @@
 ---
+import Typography from "@atoms/Typography.astro"
 
+const PROJECTS = [
+  {
+    icon: '/images/veriti-logo.svg',
+    iconAlt: 'veriti',
+  },
+  {
+    icon: '/images/latrik-logo.svg',
+    iconAlt: 'latrik',
+  },
+  {
+    icon: '/images/todos-a-merida-logo.svg',
+    iconAlt: 'todos a merida',
+  },
+  {
+    icon: '/images/ticket-scan-logo.svg',
+    iconAlt: 'ticket scan',
+  },
+  {
+    icon: '/images/repensar-logo.svg',
+    iconAlt: 'repensar',
+  },
+]
 ---
 
-<!-- Slider main container -->
-<div class="swiper">
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
-    <!-- Slides -->
-    <div class="swiper-slide">Slide 1</div>
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
-    <div class="swiper-slide">Slide 4</div>
-    <div class="swiper-slide">Slide 5</div>
-    <div class="swiper-slide">Slide 6</div>
-    <div class="swiper-slide">Slide 7</div>
-    <div class="swiper-slide">Slide 8</div>
-    <div class="swiper-slide">Slide 9</div>
-    <div class="swiper-slide">Slide 10</div>
+<div class="grid grid-cols-1 md:grid-cols-4">
+  <!-- Slider main container -->
+  <div class="swiper md:col-span-3">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      {PROJECTS.map(({ icon, iconAlt }) => <img alt={iconAlt} src={icon} class="swiper-slide w-3" />)}
+    </div>
+  </div>
+  <div class="bg-green hidden md:block text-center px-7 h-96">
+    <Typography as="h2" variant="title" color="black" class="hidden text-center md:block">
+      Lorem ipsum dolor sit amet
+    </Typography>
   </div>
 </div>
 
 <style>
   .swiper {
     width: 100%;
-    max-width: 600px;
+    max-width: 400px;
 
-    height: 300px;
+    max-height: 400px;
   }
 
   .swiper-slide {
@@ -43,8 +64,8 @@
   import 'swiper/css'
 
   new Swiper('.swiper', {
-    loop: true,
-    slidesPerView: 'auto',
+    loop: false,
+    slidesPerView: 5,
   })
 
   function handleColorGradient() {

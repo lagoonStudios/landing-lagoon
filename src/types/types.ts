@@ -4,7 +4,7 @@ export interface Testimony {
   testimony: string
   companyName?: string
   name?: string
-  rate: 1 | 2 | 3 | 4 | 5
+  rate: number
   date: string,
   class?: string
 }

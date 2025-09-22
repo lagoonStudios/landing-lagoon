@@ -6,7 +6,6 @@ import type { Testimony } from 'src/types/types'
 
 const TESTIMONIALS: Testimony[] = [
   {
-    logo: 'VERITI LOGO',
     testimonyTitle: 'A great team that I recommend to reach the goals in the estimated time.',
     testimony:
       'Thanks to their team, we successfully launched our product to market. Their innovative approach and attention to detail made all the difference.',
@@ -14,6 +13,7 @@ const TESTIMONIALS: Testimony[] = [
     name: 'Martin Chapman',
     rate: 5,
     date: 'June 2023',
+    logo: '/images/veriti-logo.svg',
   },
   {
     logo: '',
@@ -34,7 +34,6 @@ const TESTIMONIALS: Testimony[] = [
     date: 'March 2022',
   },
   {
-    logo: 'VERITI LOGO',
     testimonyTitle: 'A great team that I recommend to reach the goals in the estimated time.',
     testimony: 'Their strategic insights and technical expertise helped us scale faster than we imagined.',
     companyName: 'Veriti  app Team',
@@ -54,7 +53,7 @@ const TESTIMONIALS: Testimony[] = [
     name={TESTIMONIALS[0].name}
     testimonyTitle={TESTIMONIALS[0].testimonyTitle}
   />
-  <ul class="flex items-center justify-center gap-10 p-3">
+  <ul class="grid items-center justify-center gap-10 p-3">
     {
       TESTIMONIALS.map(({ logo, testimonyTitle, testimony, companyName, name, rate, date }, index) => (
         <>

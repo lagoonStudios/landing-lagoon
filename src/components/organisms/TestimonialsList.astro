@@ -9,31 +9,38 @@ const TESTIMONIALS: Testimony[] = [
     logo: 'VERITI LOGO',
     testimonyTitle: 'A great team that I recommend to reach the goals in the estimated time.',
     testimony:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet dui id orci commodo lacinia. Aliquam erat volutpat. Nulla in turpis dolor. Integer congue elit nec ipsum fringilla, sed ornare diam euismod.',
+      'Thanks to their team, we successfully launched our product to market. Their innovative approach and attention to detail made all the difference.',
     companyName: 'Veriti  app Team',
     name: 'Martin Chapman',
     rate: 5,
     date: 'June 2023',
   },
   {
-    logo: 'VERITI LOGO',
+    logo: '',
     testimonyTitle: 'A great team that I recommend to reach the goals in the estimated time.',
-    testimony:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet dui id orci commodo lacinia. Aliquam erat volutpat. Nulla in turpis dolor. Integer congue elit nec ipsum fringilla, sed ornare diam euismod.',
-    companyName: 'Veriti  app Team',
-    name: 'Martin Chapman',
+    testimony: 'Exceptional professionals who truly understand product development. They exceeded our expectations.',
+    companyName: '',
+    name: 'Todos a Merida Fest',
     rate: 5,
-    date: 'June 2023',
+    date: 'January 2023',
+  },
+  {
+    logo: '',
+    testimonyTitle: 'From concept to execution, their team delivered beyond expectations. Our users love the final product, and so do we!',
+    testimony: 'Their strategic insights and technical expertise helped us scale faster than we imagined.',
+    companyName: '',
+    name: 'Rethinking Tourism Mérida',
+    rate: 4,
+    date: 'March 2022',
   },
   {
     logo: 'VERITI LOGO',
     testimonyTitle: 'A great team that I recommend to reach the goals in the estimated time.',
-    testimony:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet dui id orci commodo lacinia. Aliquam erat volutpat. Nulla in turpis dolor. Integer congue elit nec ipsum fringilla, sed ornare diam euismod.',
+    testimony: 'Their strategic insights and technical expertise helped us scale faster than we imagined.',
     companyName: 'Veriti  app Team',
-    name: 'Martin Chapman',
+    name: 'Latrik Medical RIS',
     rate: 5,
-    date: 'June 2023',
+    date: 'March 2023',
   },
 ]
 ---
@@ -41,7 +48,7 @@ const TESTIMONIALS: Testimony[] = [
 <div class="flex flex-col gap-10">
   <TestimonialHighlight
     class="hidden md:block"
-    testimony={TESTIMONIALS[0].testimony}
+    testimony={"Optimize your product's performance with our team of experts. We specialize in developing innovative solutions that take your business to the next level."}
     date={TESTIMONIALS[0].date}
     rate={TESTIMONIALS[0].rate}
     name={TESTIMONIALS[0].name}

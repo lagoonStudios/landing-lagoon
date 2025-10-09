@@ -4,19 +4,19 @@ import DeviceMobile from '@icons/device-mobile.astro'
 import WebWindow from '@icons/web-window.astro'
 import { Image } from 'astro:assets'
 
-const { icon, iconAlt, firstLabel, secondLabel } = Astro.props
+const { icon, iconAlt, firstLabel, secondLabel, index } = Astro.props
 ---
 
 <li class="rounded-t-[20px] shadow-serviceCard w-full max-w-[450px]">
   <div class="flex items-center justify-center rounded-t-[20px] bg-white p-5"><Image src={icon} alt={iconAlt} /></div>
-  <div class="flex flex-col gap-3 bg-green px-5 py-3">
+  <div class={`flex flex-col gap-3 ${index % 2 === 0 ? 'bg-green' : 'bg-purple '} px-5 py-3`}>
     <div class="flex items-center justify-start gap-4">
-      <DeviceMobile class="size-8" />
-      <Typography as="label" variant="medium" color="black" class="block"> {firstLabel}</Typography>
+      <DeviceMobile class={`size-8 ${index % 2 === 0 ? 'text-black' : 'text-white'}`} />
+      <Typography as="label" variant="medium" color={index % 2 === 0 ? 'black' : 'white'} class="block"> {firstLabel}</Typography>
     </div>
     <div class="flex items-center justify-start gap-4">
-      <WebWindow class="size-8" />
-      <Typography as="label" variant="medium" color="black" class="block"> {secondLabel} </Typography>
+      <WebWindow class={`size-8 ${index % 2 === 0 ? 'text-black' : 'text-white'}`} />
+      <Typography as="label" variant="medium" color={index % 2 === 0 ? 'black' : 'white'} class="block"> {secondLabel} </Typography>
     </div>
   </div>
 </li>

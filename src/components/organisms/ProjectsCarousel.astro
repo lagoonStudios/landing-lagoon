@@ -29,27 +29,14 @@ const PROJECTS = [
   <!-- Slider main container -->
   <div class="md:col-span-7 flex flex-col gap-10">
     <Typography as="h2" color="black" variant="title" class="text-start"> Projects </Typography>
-    <div class="swiper">
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper">
-        <!-- Slides -->
+    <div class="projects">
         {
-          PROJECTS.map(({ icon, iconAlt }) => (
-            <div class="swiper-slide swiper-slide-projects">
-              <img alt={iconAlt} src={icon} class="w-auto" />
+          PROJECTS.map(({ icon, iconAlt }, index) => (
+            <div class="bg-blue flex items-center justify-center w-1/5 hover:w-3/5 transition-all duration-300" style={`opacity: ${1 - index * 0.1}`}>
+              <img alt={iconAlt} src={icon} class="w-full px-2" />
             </div>
           ))
         }
-      </div>
-      <!-- If we need pagination -->
-      <div class="swiper-pagination"></div>
-  
-      <!-- If we need navigation buttons -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-  
-      <!-- If we need scrollbar -->
-      <div class="swiper-scrollbar"></div>
     </div>
   </div>
   <div class="hidden bg-green text-center md:col-span-5 md:block">
@@ -61,23 +48,17 @@ const PROJECTS = [
 </div>
 
 <style>
-  .swiper {
+  .projects {
     width: 100%;
-    max-width: 600px;
+    max-width: 200rem;
     height: 700px;
+    display: flex;
+    flex-direction: row;
   }
 
-  .swiper-slide-projects {
-    color: white;
-    width: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8px;
-  }
 </style>
 
-<script>
+<!-- <script>
   import Swiper from 'swiper'
   import 'swiper/css'
 
@@ -98,4 +79,4 @@ const PROJECTS = [
   }
 
   handleColorGradient()
-</script>
+</script> -->

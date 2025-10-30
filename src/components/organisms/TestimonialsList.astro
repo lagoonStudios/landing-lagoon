@@ -1,6 +1,6 @@
 ---
+import StarRating from '@atoms/StarRating.astro'
 import TestimonialCard from '@molecules/TestimonialCard.astro'
-import TestimonialHighlight from '@molecules/TestimonialHighlight.astro'
 import TestimonialQuote from '@molecules/TestimonialQuote.astro'
 import type { Testimony } from 'src/types/types'
 
@@ -26,7 +26,8 @@ const TESTIMONIALS: Testimony[] = [
   },
   {
     logo: '',
-    testimonyTitle: 'From concept to execution, their team delivered beyond expectations. Our users love the final product, and so do we!',
+    testimonyTitle:
+      'From concept to execution, their team delivered beyond expectations. Our users love the final product, and so do we!',
     testimony: 'Their strategic insights and technical expertise helped us scale faster than we imagined.',
     companyName: '',
     name: 'Rethinking Tourism Mérida',
@@ -46,15 +47,26 @@ const TESTIMONIALS: Testimony[] = [
 ---
 
 <div class="flex flex-col gap-10">
-  <TestimonialHighlight
-    class="hidden md:block"
-    testimony={"Optimize your product's performance with our team of experts. We specialize in developing innovative solutions that take your business to the next level."}
-    date={TESTIMONIALS[0].date}
-    rate={TESTIMONIALS[0].rate}
-    name={TESTIMONIALS[0].name}
-    testimonyTitle={TESTIMONIALS[0].testimonyTitle}
-  />
-  <ul class="grid items-center justify-center gap-10 p-3">
+  <div class="grid grid-cols-5 gap-4">
+    <div class="col-span-full flex flex-col gap-4 md:col-span-3 items-center justify-center md:px-5">
+      <p class="text-lg font-medium md:text-3xl">
+        "Optimize your product's performance with our team of experts. We specialize in developing innovative solutions
+        that take your business to the next level."
+      </p>
+      <StarRating rating={5} max={5} className="hidden md:flex items-center gap-1 col-span-full md:col-span-3" />
+    </div>
+    <TestimonialCard
+      logo="/images/veriti-logo.svg"
+      companyName="Veriti App Team"
+      testimonyTitle="A great team that I recommend to reach the goals in the estimated time."
+      rate={5}
+      date="March 2023"
+      testimony="Thanks to their team, we successfully launched our product to market. Their innovative approach and attention to detail made all the difference."
+      name="Martin Chapman"
+      class="col-span-full shadow-lg md:col-span-2 hidden md:block"
+    />
+  </div>
+  <ul class="grid items-center justify-center gap-10 p-3 md:grid-cols-3">
     {
       TESTIMONIALS.map(({ logo, testimonyTitle, testimony, companyName, name, rate, date }, index) => (
         <>

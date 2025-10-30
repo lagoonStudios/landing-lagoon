@@ -5,22 +5,22 @@ import Typography from '@atoms/Typography.astro'
 import LagoonLogo from '@icons/lagoon-logo.astro'
 ---
 
-<footer class="w-full p-10">
-  <div class="m-auto flex w-[800px] max-w-[calc(100%-2rem)] flex-col items-center justify-center gap-10">
-    <Typography as="h2" variant="title" color="black">Contact Us</Typography>
+<footer class="w-full p-10 ">
+  <div class="m-auto flex w-[800px] max-w-[calc(100%-2rem)] flex-col items-center justify-center gap-10 bg-purple p-5">
+    <Typography as="h2" variant="title" color="white">Get In Touch</Typography>
 
     <form id="contact-form" class="flex w-full flex-col gap-4">
-      <Input label="Name" />
-      <Input label="Email" />
+      <Input label="Name" color="white"/>
+      <Input label="Email" color="white"/>
 
-      <TextArea label="Message" />
+      <TextArea label="Message" color='white'/>
 
-      <button type="submit" class="mt-2 rounded-full border border-black bg-purple py-1 text-base text-black">
+      <button type="submit" class="mt-2 rounded-full border border-white bg-purple py-1 text-base text-white">
         Send it
       </button>
     </form>
 
-    <LagoonLogo class="text-black" />
+    <LagoonLogo class="text-black" color="white" color="white"/>
   </div>
 </footer>
 <script>

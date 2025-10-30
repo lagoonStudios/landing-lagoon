@@ -1,29 +1,38 @@
 ---
+// This is required so the Astro page is also rendered on the server,
+// allowing us to read the D1 binding and fetch data at build/request time.
+export const prerender = false
+
 import Input from '@atoms/Input.astro'
 import TextArea from '@atoms/TextArea.astro'
 import Typography from '@atoms/Typography.astro'
 import LagoonLogo from '@icons/lagoon-logo.astro'
+
+// Get success status from URL
+const isSuccess = Astro.url.searchParams.has('success')
 ---
 
-<footer class="w-full p-5 bg-purple mt-5">
-  <div class="m-auto flex w-[800px] max-w-[calc(100%-2rem)] flex-col items-center justify-center gap-10 mt-3">
+<footer class="mt-5 w-full bg-purple p-5">
+  <div class="m-auto mt-3 flex w-[800px] max-w-[calc(100%-2rem)] flex-col items-center justify-center gap-10">
     <Typography as="h2" variant="title" color="white">Get In Touch</Typography>
 
-    <form id="contact-form" class="flex w-full flex-col gap-4">
-      <Input label="Name" color="white"/>
-      <Input label="Email" color="white"/>
+    {isSuccess && (
+      <div class="w-full rounded-full border border-white bg-white/10 px-5 py-3 text-center text-sm text-white">
+        Thanks for reaching out! We will get back to you shortly.
+      </div>
+    )}
 
-      <TextArea label="Message" color='white'/>
+    <form action="/api/client" method="POST" class="flex w-full flex-col gap-4">
+      <Input name="name" label="Name" color="white" required />
+      <Input name="email" label="Email" type="email" color="white" required />
+
+      <TextArea name="message" label="Message" color="white" required />
 
       <button type="submit" class="mt-2 rounded-full border border-white bg-purple py-1 text-base text-white">
         Send it
       </button>
     </form>
 
-    <LagoonLogo class="text-black" color="white" color="white"/>
+    <LagoonLogo class="text-black" color="white" color="white" />
   </div>
 </footer>
-<script>
-  const form = document.querySelector<HTMLFormElement>('#contact-form')
-  form?.addEventListener('submit', (e) => e.preventDefault())
-</script>

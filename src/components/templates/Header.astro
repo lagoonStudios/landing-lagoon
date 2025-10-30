@@ -2,23 +2,30 @@
 import LagoonLogo from '@icons/lagoon-logo.astro'
 ---
 
-<header class="sticky top-0 z-10 flex gap-5 w-full items-center justify-between bg-white px-5 pb-4 pt-6">
-  <LagoonLogo class="h-auto w-40 text-purple md:w-52" />
+<header class="sticky top-0 z-10 flex w-full items-center justify-between gap-5 bg-white md:bg-purple px-8 py-10">
+  <LagoonLogo class="h-auto w-40 text-purple md:text-white md:w-52" />
 
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="44"
-    height="44"
-    viewBox="0 0 24 24"
-    stroke-width="1.5"
-    stroke="currentColor"
-    fill="none"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  >
-    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-    <path d="M4 6l16 0"></path>
-    <path d="M4 12l16 0"></path>
-    <path d="M4 18l16 0"></path>
-  </svg>
+  <div class="hidden w-1/4 flex-row justify-evenly self-end md:flex">
+    <button type="submit" class="py-1 text-base text-white"> Services </button>
+    <button type="submit" class="mt-2 rounded-md bg-green p-2 px-4 text-base text-white"> Get Started </button>
+  </div>
+
+  <button class="block md:hidden">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="44"
+      height="44"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M4 6l16 0"></path>
+      <path d="M4 12l16 0"></path>
+      <path d="M4 18l16 0"></path>
+    </svg>
+  </button>
 </header>

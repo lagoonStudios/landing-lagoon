@@ -3,12 +3,13 @@ import Typography from './Typography.astro'
 
 interface Props {
   label: string
+  color?: "black" | "white" | "purple" | "blue" | "green" | "gray" | "red"
 }
 
-const { label } = Astro.props
+const { label, color } = Astro.props
 ---
 
-<Typography as="label" variant="medium" color="black" class="flex w-full flex-col gap-1 font-extralight">
+<Typography as="label" variant="medium" color={color || "black"} class="flex w-full flex-col gap-1 font-normal">
   {label}
   <input class="w-full rounded-full text-black px-5 py-2" />
 </Typography>

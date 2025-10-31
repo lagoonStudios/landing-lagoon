@@ -1,15 +1,27 @@
 ---
 import Typography from './Typography.astro'
+import type { HTMLAttributes } from 'astro/types'
 
-interface Props {
+type InputTypeProp = HTMLAttributes<'input'>['type']
+
+type Props = Omit<HTMLAttributes<'input'>, 'type'> & {
   label: string
+  name: string
+  type?: InputTypeProp
   color?: "black" | "white" | "purple" | "blue" | "green" | "gray" | "red"
 }
 
-const { label, color } = Astro.props
+const { label, name, color, type, ...inputProps } = Astro.props as Props
+const inputType: InputTypeProp = type ?? 'text'
 ---
 
 <Typography as="label" variant="medium" color={color || "black"} class="flex w-full flex-col gap-1 font-normal">
   {label}
-  <input class="w-full rounded-full text-black px-5 py-2" />
+  <input
+    name={name}
+    id={name}
+    type={inputType}
+    class="w-full rounded-full px-5 py-2 text-black"
+    {...inputProps}
+  />
 </Typography>
